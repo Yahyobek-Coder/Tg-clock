@@ -7,6 +7,7 @@ from telethon import TelegramClient
 from telethon.errors import SessionPasswordNeededError
 from telethon.sessions import StringSession
 from telethon.tl.functions.account import UpdateProfileRequest
+import subprocess
 
 print("""\033[31m
 ▄▄▄█████▓  ▄████     ▄████▄   ██▓     ▒█████   ▄████▄   ██ ▄█▀
@@ -54,4 +55,10 @@ async def main():
         await asyncio.sleep(60)  # Update every minute
 
 with client:
+    try:
+        import aiocron
+    except ImportError:
+        print("aiocron module not found. Installing aiocron...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "aiocron"])
+        print("aiocron installation complete.")
     client.loop.run_until_complete(main())
