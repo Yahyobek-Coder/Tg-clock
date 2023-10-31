@@ -30,8 +30,10 @@ api_hash = "1e6ca420184a701db1f8a1301df99288"
 # Input for the string session
 string = input("Press enter to continue: ")
 
-# Initialize the Telegram client
-client = TelegramClient(StringSession(string), api_id, api_hash)
+#
+string_session = str(client.session.save())
+print("String session:", string_session)
+
 
 # Input for the phone number or bot token
 phone_number = input("Please enter your phone number (or bot token): ")
