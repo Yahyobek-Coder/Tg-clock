@@ -1,5 +1,4 @@
 import asyncio
-import aiocron
 import datetime
 import os
 import sys
@@ -49,12 +48,10 @@ async def main():
     time.sleep(5)
     print('\033[32mClock set successfully!')
 
-    @aiocron.crontab("*/1 * * * *")
-    async def set_clock():
+    while True:
         current_time = datetime.datetime.today().strftime(nick + " | %H:%M |")
         await client(UpdateProfileRequest(first_name=current_time))
-
-    await client.run_until_disconnected()
+        await asyncio.sleep(60)  # Update every minute
 
 with client:
     client.loop.run_until_complete(main())
