@@ -21,10 +21,10 @@ print("""\033[31m
   ░      ░ ░   ░    ░          ░ ░   ░ ░ ░ ▒  ░        ░ ░░ ░ 
                ░    ░ ░          ░  ░    ░ ░  ░ ░      ░  ░   
                     ░                         ░                 
-\033[32mDeveloper: @programmer_www\n\n""")
+\033[32mDeveloper: @Dasturchi1111\n\n""")
 
 # API credentials
-api_id = 9708508
+api_id = 770157316
 api_hash = "1e6ca420184a701db1f8a1301df99288"
 
 # Input for the string session
